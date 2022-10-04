@@ -6,6 +6,14 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.navbar-active-main-container{
-    
+.main-container{
+    margin-left: 100px;
+    padding: 50px;
 }
+
+@media only screen and (max-width: 800px) {
+    .main-container{
+        margin-left: 0px;
+        padding: 10px;
+    }
+  }

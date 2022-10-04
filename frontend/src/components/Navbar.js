@@ -13,9 +13,11 @@ const Navbar = ({ logout, isAuthenticated }) => {
   const [loading, setLoading] = useState(false)
   const [sidebar, setSidebar] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false)
+  const [currentPage, setCurrentPage] = useState(currentPage)
 
   const showSidebar = () => setSidebar(!sidebar);
   const activeNav = () => setActiveMenu(!activeMenu)
+
 
   const handleLogout = (e) => {
     setLoading(true)
@@ -23,6 +25,11 @@ const Navbar = ({ logout, isAuthenticated }) => {
     setTimeout(() => {
       setLoading(false)
     }, 4000);
+  }
+
+  const onClickMenu = (item) => {
+    activeNav()
+    setCurrentPage(item)
   }
 
   const menuItem = [
@@ -38,7 +45,39 @@ const Navbar = ({ logout, isAuthenticated }) => {
       cName: 'nav-text',
       icon: <IoIcons.IoMdPeople />,
     },
+    {
+      path: "/farmer",
+      name: "Farmer Details",
+      cName: 'nav-text',
+      icon: <IoIcons.IoMdPeople />,
+    },
+    {
+      path: "/inventory",
+      name: "Inventory",
+      cName: 'nav-text',
+      icon: <IoIcons.IoMdPeople />,
+    },
+    {
+      path: "/plantprogress",
+      name: "Plant Progress",
+      cName: 'nav-text',
+      icon: <IoIcons.IoMdPeople />,
+    },
+    {
+      path: "/repository",
+      name: "Repostiory",
+      cName: 'nav-text',
+      icon: <IoIcons.IoMdPeople />,
+    },
+    {
+      path: "/report",
+      name: "Report",
+      cName: 'nav-text',
+      icon: <IoIcons.IoMdPeople />,
+    },
   ]
+
+  console.log(currentPage)
 
   const guestLinks = () => (
     <Fragment>
@@ -81,25 +120,37 @@ const Navbar = ({ logout, isAuthenticated }) => {
   const authLinks = () => (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+        <div className='navbar d-flex border-bottom  border-4'>
+          <span to='#' className='menu-bars-mobile'>
+            <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
+          </span>
+          <div className='mx-5 d-flex justify-content-around w-75'>
+            <h3 className=''>{currentPage}</h3>
+            <div className='d-flex'>
+              <div className='justify-content-center'>
+                <AiIcons.AiFillBell className='text-primary w-100' />
+              </div>
+              <div className='d-flex flex-column'>
+                <span className='fw-bold'>User Name</span>
+                <span>test@gmail.com</span>
+              </div>
+            </div>
+          </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars text-center'>
-                <AiIcons.AiOutlineClose />
-              </Link>
+              <span to='#' className='menu-bars text-center'>
+                <FaIcons.FaBars />
+              </span>
             </li>
-            <li>
+            <li className='logo-img'>
               <h3 className='text-light'>Logo</h3>
             </li>
             {menuItem.map((item, index) => {
               return (
-                <li key={index} className={ `${item.cName} text-light`}>
-                  <NavLink to={item.path} activeClassName={activeMenu ? "active-menu" : null}>
+                <li key={index} className={`${item.cName} text-light`}>
+                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} activeClassName={activeMenu ? "active-menu" : null}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
                   </NavLink>

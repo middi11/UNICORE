@@ -13,6 +13,12 @@ import Home from './containers/Home';
 import Login from './containers/Login';
 import Account from './containers/Account';
 import Layout from './hocs/Layout';
+import FarmerDetails from './containers/FarmerDetails';
+import FarmerDetailsSec from './containers/FarmerDetailsSec';
+import Inventory from './containers/Inventory';
+import PlantProgress from './containers/PlantProgress';
+import Repository from './containers/Repository';
+import Report from './containers/Report';
 import Navbar from './components/Navbar';
 import './app.css'
 
@@ -24,6 +30,12 @@ const App = () => (
                     <Route exact path="/home" element={<Home />} />
                     <Route exact path="/" element={<Login />} />
                     <Route exact path="/account" element={<Account />} />
+                    <Route exact path="/farmer" element={<FarmerDetails />} />
+                    <Route exact path="/farmersec" element={<FarmerDetailsSec />} />
+                    <Route exact path="/inventory" element={<Inventory />} />
+                    <Route exact path="/plantprogress" element={<PlantProgress />} />
+                    <Route exact path="/repository" element={<Repository />} />
+                    <Route exact path="/report" element={<Report />} />
                     <Route render={() => <Navigate to="/" />} />
                 </Routes>
             </Layout>
