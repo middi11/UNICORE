@@ -2,6 +2,7 @@ import React from 'react'
 
 const FarmerDetails = () => {
     return (
+        
         <div className='container mt-4'>
             <div className='my-3'>
                 <form>
