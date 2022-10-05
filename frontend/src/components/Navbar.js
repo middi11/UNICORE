@@ -22,6 +22,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
   const handleLogout = (e) => {
     setLoading(true)
     logout()
+    setCurrentPage()
     setTimeout(() => {
       setLoading(false)
     }, 4000);
@@ -125,7 +126,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
             <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
           </span>
           <div className='mx-5 d-flex justify-content-around w-75'>
-            <h3 className=''>{currentPage}</h3>
+            <h3 className=''>{currentPage === undefined ? "Home": currentPage}</h3>
             <div className='d-flex'>
               <div className='justify-content-center'>
                 <AiIcons.AiFillBell className='text-primary w-100' />
@@ -150,7 +151,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
             {menuItem.map((item, index) => {
               return (
                 <li key={index} className={`${item.cName} text-light`}>
-                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} activeClassName={activeMenu ? "active-menu" : null}>
+                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu || currentPage === "Home" ? "active-menu" : null}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
                   </NavLink>
