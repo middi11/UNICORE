@@ -21,11 +21,14 @@ const FarmerDetails = () => {
 
             <div className='my-3'>
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
+                    <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
+                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                    </div>
                     <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
+                        <span>Name: Ali bin Abu</span>
+                        <span>ID Number: 912948382234</span>
+                        <span>Location: Ladang Sekinchan</span>
+                        <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
                         <a href="/farmersec" className='btn btn-primary'>View Detail</a>
@@ -33,11 +36,14 @@ const FarmerDetails = () => {
                 </div>
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
+                    <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
+                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                    </div>
                     <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
+                        <span>Name: Ali bin Abu</span>
+                        <span>ID Number: 912948382234</span>
+                        <span>Location: Ladang Sekinchan</span>
+                        <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
                         <a href="/farmersec" className='btn btn-primary'>View Detail</a>
@@ -45,11 +51,14 @@ const FarmerDetails = () => {
                 </div>
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
+                    <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
+                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                    </div>
                     <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
+                        <span>Name: Ali bin Abu</span>
+                        <span>ID Number: 912948382234</span>
+                        <span>Location: Ladang Sekinchan</span>
+                        <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
                         <a href="/farmersec" className='btn btn-primary'>View Detail</a>
@@ -57,11 +66,14 @@ const FarmerDetails = () => {
                 </div>
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
+                    <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
+                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                    </div>
                     <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
+                        <span>Name: Ali bin Abu</span>
+                        <span>ID Number: 912948382234</span>
+                        <span>Location: Ladang Sekinchan</span>
+                        <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
                         <a href="/farmersec" className='btn btn-primary'>View Detail</a>
@@ -69,42 +81,20 @@ const FarmerDetails = () => {
                 </div>
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
+                    <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
+                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                    </div>
                     <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                    </div>
-                    <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
-                    </div>
-                </div>
-
-                <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
-                    <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                    </div>
-                    <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
-                    </div>
-                </div>
-
-                <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
-                    <div className='px-2 d-flex flex-column'>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
-                        <span>Test</span>
+                        <span>Name: Ali bin Abu</span>
+                        <span>ID Number: 912948382234</span>
+                        <span>Location: Ladang Sekinchan</span>
+                        <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
                         <a href="/farmersec" className='btn btn-primary'>View Detail</a>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
