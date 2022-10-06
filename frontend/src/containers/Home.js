@@ -80,7 +80,7 @@ const Home = () => {
       <div className='p-4 row justify-content-around'>
         <div className='border rounded col-lg-5 shadow-sm p-3'>
           <p className='fw-bold'>Ladang Sekinchan</p>
-          <img src="static/images/test.jpg" alt="" />
+          <img src="static/images/sekinchan-map.jpg" className="w-100" alt="" />
         </div>
         <div className='border rounded col-lg-5 shadow-sm p-3'>
           <p className='fw-bold'>Test</p>
