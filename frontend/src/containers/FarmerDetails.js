@@ -23,7 +23,7 @@ const FarmerDetails = () => {
             <div className='my-3'>
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
                     <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
-                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                        <img src="static/images/farmer.jpg" className="w-100" alt="" />
                     </div>
                     <div className='px-2 d-flex flex-column'>
                         <span>Name: Ali bin Abu</span>
@@ -38,7 +38,7 @@ const FarmerDetails = () => {
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
                     <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
-                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                        <img src="static/images/farmer.jpg" className="w-100" alt="" />
                     </div>
                     <div className='px-2 d-flex flex-column'>
                         <span>Name: Ali bin Abu</span>
@@ -53,7 +53,7 @@ const FarmerDetails = () => {
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
                     <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
-                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                        <img src="static/images/farmer.jpg" className="w-100" alt="" />
                     </div>
                     <div className='px-2 d-flex flex-column'>
                         <span>Name: Ali bin Abu</span>
@@ -68,7 +68,7 @@ const FarmerDetails = () => {
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
                     <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
-                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                        <img src="static/images/farmer.jpg" className="w-100" alt="" />
                     </div>
                     <div className='px-2 d-flex flex-column'>
                         <span>Name: Ali bin Abu</span>
@@ -83,7 +83,7 @@ const FarmerDetails = () => {
 
                 <div className='justify-content-center d-flex px-2 w-50 container shadow p-3 mb-5 bg-white rounded'>
                     <div className='w-25 h-25 d-flex align-items-center border border-2 rounded-circle'>
-                        <img src="static/images/test.jpg" className="w-100" alt="" />
+                        <img src="static/images/farmer.jpg" className="w-100" alt="" />
                     </div>
                     <div className='px-2 d-flex flex-column'>
                         <span>Name: Ali bin Abu</span>

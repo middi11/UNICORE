@@ -20,35 +20,35 @@ const PlantProgress = () => {
             </div>
             <div className='row my-3 justify-content-around'>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
-                </div>
-            </div>
-            <div className='row my-3 justify-content-around'>
-                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
-                </div>
-                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
-                </div>
-                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                 </div>
             </div>
             <div className='row my-3 justify-content-around'>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <p>Test</p>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
+                </div>
+            </div>
+            <div className='row my-3 justify-content-around'>
+                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
+                </div>
+                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
+                </div>
+                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                 </div>
             </div>
         </div>
