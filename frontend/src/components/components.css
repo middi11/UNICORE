@@ -146,3 +146,7 @@ span {
 .dropdown-account-active{
   display: block;
 }
+
+.logo-img{
+  width: 20%!important;
+}

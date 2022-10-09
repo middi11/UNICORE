@@ -28,8 +28,9 @@ const Login = ({ login, isAuthenticated }) => {
     return (
         <div id="main-login-cont" className='d-grid container h-100'>
             <div id="sec-login-cont" className='container p-5'>
-                <h1>Login</h1>
-                <p>Login into your account</p>
+                <div className='d-flex justify-content-center w-100'>
+                    <img src="/static/images/Picture1.png" alt="" className='w-25'/>
+                </div>
                 <form onSubmit={e => onSubmit(e)} className="text-center">
                     <div className='form-group mt-4'>
                         <input type="email" className='form-control' placeholder='Email' name='email' value={email} onChange={e => onChange(e)} required />

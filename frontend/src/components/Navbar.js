@@ -164,12 +164,12 @@ const Navbar = ({ logout, isAuthenticated }) => {
                 <FaIcons.FaBars />
               </span>
             </li>
-            <li className='logo-img'>
-              <h3 className='text-light'>Logo</h3>
+            <li className="w-100 d-flex justify-content-center my-2">
+              <img src="/static/images/unicore_logo.png" alt="" width="40" className={sidebar ? null : "logo-img"}/>
             </li>
             {menuItem.map((item, index) => {
               return (
-                <li key={index} className={`${item.cName} text-light`}>
+                <li key={index} className={`${item.cName} text-light d-flex justify-content-center`}>
                   <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu ? "active-menu" : null}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
