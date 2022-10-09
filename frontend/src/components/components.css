@@ -126,7 +126,23 @@ span {
   margin-left: 16px;
 }
 
-.active-menu a{
+.active-menu{
   background: #1a83ff;
   font-weight: bold;
+}
+
+.account-drop{
+  cursor: pointer;
+}
+
+.account-drop:hover{
+  background-color: #d6d6d6;
+}
+
+.dropdown-account{
+  display: none;
+}
+
+.dropdown-account-active{
+  display: block;
 }

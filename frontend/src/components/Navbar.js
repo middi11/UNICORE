@@ -6,17 +6,20 @@ import './components.css'
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import { IconContext } from 'react-icons';
 
 const Navbar = ({ logout, isAuthenticated }) => {
 
   const [loading, setLoading] = useState(false)
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
   const [activeMenu, setActiveMenu] = useState(false)
   const [currentPage, setCurrentPage] = useState(currentPage)
+  const [dropAcc, setDropAcc] = useState(false)
 
   const showSidebar = () => setSidebar(!sidebar);
   const activeNav = () => setActiveMenu(!activeMenu)
+  const showDropAcc = () => setDropAcc(!dropAcc)
 
 
   const handleLogout = (e) => {
@@ -29,7 +32,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
   }
 
   const onClickMenu = (item) => {
-    activeNav()
+    // activeNav()
     setCurrentPage(item)
   }
 
@@ -39,12 +42,6 @@ const Navbar = ({ logout, isAuthenticated }) => {
       name: "Home",
       icon: <AiIcons.AiFillHome />,
       cName: 'nav-text'
-    },
-    {
-      path: "/account",
-      name: "Profile",
-      cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
     },
     {
       path: "/farmer",
@@ -73,6 +70,12 @@ const Navbar = ({ logout, isAuthenticated }) => {
     {
       path: "/report",
       name: "Report",
+      cName: 'nav-text',
+      icon: <IoIcons.IoMdPeople />,
+    },
+    {
+      path: "/summary",
+      name: "Summary",
       cName: 'nav-text',
       icon: <IoIcons.IoMdPeople />,
     },
@@ -126,21 +129,37 @@ const Navbar = ({ logout, isAuthenticated }) => {
             <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
           </span>
           <div className='mx-5 d-flex justify-content-around w-75'>
-            <h3 className=''>{currentPage === undefined ? "Home": currentPage}</h3>
-            <div className='d-flex'>
-              <div className='justify-content-center'>
+            <h3 className=''>{currentPage === undefined ? "Home" : currentPage}</h3>
+            <div className='d-flex justify-content-around account-drop p-1'>
+              <div className='d-flex align-items-center'>
                 <AiIcons.AiFillBell className='text-primary w-100' />
               </div>
-              <div className='d-flex flex-column'>
-                <span className='fw-bold'>User Name</span>
-                <span>test@gmail.com</span>
+              <div>
+                <div className='d-flex flex-column' onClick={showDropAcc}>
+                  <span className='fw-bold'>User Name</span>
+                  <span>test@gmail.com</span>
+                  <div className={dropAcc === true ? "shadow-lg p-3 mb-5 bg-white rounded dropdown-account-active" : "dropdown-account"}>
+                    <ul>
+                      <li>
+                        <Link to='/account'>
+                          <span>My Profile</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/' onClick={e => handleLogout(e)}>
+                          <span>Logout</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
+          <ul className='nav-menu-items'>
+            <li className='navbar-toggle' onClick={showSidebar}>
               <span to='#' className='menu-bars text-center'>
                 <FaIcons.FaBars />
               </span>
@@ -151,19 +170,19 @@ const Navbar = ({ logout, isAuthenticated }) => {
             {menuItem.map((item, index) => {
               return (
                 <li key={index} className={`${item.cName} text-light`}>
-                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu || currentPage === "Home" ? "active-menu" : null}>
+                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu ? "active-menu" : null}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
                   </NavLink>
                 </li>
               );
             })}
-            <li className='nav-text text-light'>
+            {/* <li className='nav-text text-light'>
               <Link to='/' onClick={e => handleLogout(e)}>
                 <AiIcons.AiOutlineClose />
                 <span className={sidebar ? 'menu-item-text' : 'text-none'}>Logout</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </IconContext.Provider>

@@ -19,6 +19,8 @@ import Inventory from './containers/Inventory';
 import PlantProgress from './containers/PlantProgress';
 import Repository from './containers/Repository';
 import Report from './containers/Report';
+import PlantProgressDetails from './containers/PlantProgressDetails';
+import Summary from './containers/Summary';
 import Navbar from './components/Navbar';
 import './app.css'
 
@@ -36,6 +38,8 @@ const App = () => (
                     <Route exact path="/plantprogress" element={<PlantProgress />} />
                     <Route exact path="/repository" element={<Repository />} />
                     <Route exact path="/report" element={<Report />} />
+                    <Route exact path="/plantprogressdetails" element={<PlantProgressDetails />} />
+                    <Route exact path="/summary" element={<Summary />} />
                     <Route render={() => <Navigate to="/" />} />
                 </Routes>
             </Layout>
