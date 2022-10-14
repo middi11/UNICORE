@@ -34,7 +34,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
   .nav-menu {
     background-color: #060b26!important;
     width: 250px!important;
@@ -133,20 +133,46 @@ span {
 
 .account-drop{
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .account-drop:hover{
-  background-color: #d6d6d6;
+
+  transition: all 0.3s ease;
 }
 
 .dropdown-account{
   display: none;
+  transition: all 0.5s ease-in-out;
 }
 
 .dropdown-account-active{
   display: block;
+  position:fixed;
+  margin-top: 50px;
+}
+
+.dropdown-account-drop{
+  text-decoration: none;
+  list-style-type: none;
+  color: #000000;
+}
+
+.dropdown-account-drop a{
+  text-decoration: none;
+  list-style-type: none;
+  color: #000000;
 }
 
 .logo-img{
   width: 20%!important;
+}
+
+.close-sidebar-icon a {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-account-drop-ul{
+  padding-left: 0 !important;
 }

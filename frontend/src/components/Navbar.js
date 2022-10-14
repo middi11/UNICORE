@@ -124,34 +124,36 @@ const Navbar = ({ logout, isAuthenticated }) => {
   const authLinks = () => (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar d-flex border-bottom  border-4'>
+        <div className='navbar d-flex border-bottom border-4'>
           <span to='#' className='menu-bars-mobile'>
             <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
           </span>
-          <div className='mx-5 d-flex justify-content-around w-75'>
+          <div className='mx-5-lg d-flex justify-content-around w-75'>
             <h3 className=''>{currentPage === undefined ? "Home" : currentPage}</h3>
             <div className='d-flex justify-content-around account-drop p-1'>
-              <div className='d-flex align-items-center'>
-                <AiIcons.AiFillBell className='text-primary w-100' />
-              </div>
-              <div>
-                <div className='d-flex flex-column' onClick={showDropAcc}>
-                  <span className='fw-bold'>User Name</span>
-                  <span>test@gmail.com</span>
-                  <div className={dropAcc === true ? "shadow-lg p-3 mb-5 bg-white rounded dropdown-account-active" : "dropdown-account"}>
-                    <ul>
-                      <li>
-                        <Link to='/account'>
-                          <span>My Profile</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to='/' onClick={e => handleLogout(e)}>
-                          <span>Logout</span>
-                        </Link>
-                      </li>
-                    </ul>
+              <div className='d-flex flex-column' onClick={showDropAcc}>
+                <div className='d-flex'>
+                  <div className='d-flex align-items-center'>
+                    <AiIcons.AiFillBell className='text-primary w-100' />
                   </div>
+                  <div className='d-flex flex-column'>
+                    <span className='fw-bold'>User Name</span>
+                    <span>test@gmail.com</span>
+                  </div>
+                </div>
+                <div className={dropAcc === true ? "shadow-lg bg-white rounded dropdown-account-active d-flex justify-content-center px-3 py-1" : "dropdown-account"}>
+                  <ul className='dropdown-account-drop-ul'>
+                    <li className='dropdown-account-drop'>
+                      <Link to='/account'>
+                        My Profile
+                      </Link>
+                    </li>
+                    <li className='dropdown-account-drop'>
+                      <Link to='/' onClick={e => handleLogout(e)}>
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -165,11 +167,11 @@ const Navbar = ({ logout, isAuthenticated }) => {
               </span>
             </li>
             <li className="w-100 d-flex justify-content-center my-2">
-              <img src="/static/images/unicore_logo.png" alt="" width="40" className={sidebar ? null : "logo-img"}/>
+              <img src="/static/images/unicore_logo.png" alt="" width="40" className={sidebar ? null : "logo-img"} />
             </li>
             {menuItem.map((item, index) => {
               return (
-                <li key={index} className={`${item.cName} text-light d-flex justify-content-center`}>
+                <li key={index} className={sidebar ? `${item.cName} text-light d-flex justify-content-center` : `${item.cName} text-light close-sidebar-icon`}>
                   <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu ? "active-menu" : null}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
