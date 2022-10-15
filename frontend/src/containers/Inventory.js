@@ -8,18 +8,33 @@ const Inventory = () => {
                 <div className='row justify-content-around p-2'>
                     <div className='col-lg mx-2 shadow-sm p-3 mb-5 rounded bg-warning'>
                         <p className='text-light'>Low Stock</p>
+                        <div>
+                            <h4 className='text-light'>10</h4>
+                        </div>
                     </div>
                     <div className='col-lg mx-2  shadow-sm p-3 mb-5 rounded bg-danger'>
                         <p className='text-light'>Out Of Stock</p>
+                        <div>
+                            <h4 className='text-light'>10</h4>
+                        </div>
                     </div>
                     <div className='col-lg mx-2  shadow-sm p-3 mb-5 rounded bg-secondary'>
                         <p className='text-light'>Zero Stock</p>
+                        <div>
+                            <h4 className='text-light'>10</h4>
+                        </div>
                     </div>
                     <div className='col-lg mx-2  shadow-sm p-3 mb-5 rounded bg-dark'>
                         <p className='text-light'>Void Stock</p>
+                        <div>
+                            <h4 className='text-light'>10</h4>
+                        </div>
                     </div>
                     <div className='col-lg mx-2  shadow-sm p-3 mb-5 rounded bg-success'>
                         <p className='text-light'>Total Product</p>
+                        <div>
+                            <h4 className='text-light'>10</h4>
+                        </div>
                     </div>
                 </div>
             </div>

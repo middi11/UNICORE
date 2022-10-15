@@ -176,3 +176,9 @@ span {
 .dropdown-account-drop-ul{
   padding-left: 0 !important;
 }
+
+.footer-img-nav{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

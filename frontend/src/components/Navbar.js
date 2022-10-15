@@ -71,12 +71,6 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
       icon: <RiIcons.RiArticleFill />,
     },
     {
-      path: "/report",
-      name: "Report",
-      cName: 'nav-text',
-      icon: <IoIcons5.IoBarChartSharp />,
-    },
-    {
       path: "/summary",
       name: "Summary",
       cName: 'nav-text',
@@ -193,6 +187,12 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
                 <span className={sidebar ? 'menu-item-text' : 'text-none'}>Logout</span>
               </Link>
             </li> */}
+            <li className='footer-img-nav pb-2'>
+              <div className='d-flex justify-content-center'>
+                <img src="static/images/Picture1.png" alt="" className='w-25' />
+                <img src="static/images/bernas-nasioanal-logo-EB1FE7BD5C-seeklogo.com.png" alt="" className='w-25' />
+              </div>
+            </li>
           </ul>
         </nav>
       </IconContext.Provider>
@@ -263,6 +263,12 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
                 <span className={sidebar ? 'menu-item-text' : 'text-none'}>Logout</span>
               </Link>
             </li> */}
+            <li className='footer-img-nav pb-2'>
+              <div className='d-flex justify-content-center'>
+                <img src="static/images/Picture1.png" alt="" className='w-25' />
+                <img src="static/images/bernas-nasioanal-logo-EB1FE7BD5C-seeklogo.com.png" alt="" className='w-25' />
+              </div>
+            </li>
           </ul>
         </nav>
       </IconContext.Provider>
@@ -282,7 +288,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
           </div>
         ) : null
       }
-      {isAuthenticated && role === "Clerk" ? authLinks() : isAuthenticated && role == "Manager" ? authLinksManager() :  null}
+      {isAuthenticated && role === "Clerk" ? authLinks() : isAuthenticated && role == "Manager" ? authLinksManager() : null}
     </>
   )
 }
