@@ -6,10 +6,13 @@ import './components.css'
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import * as IoIcons5 from "react-icons/io5";
+import * as RiIcons from "react-icons/ri";
+import * as HiIcons from "react-icons/hi";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import { IconContext } from 'react-icons';
 
-const Navbar = ({ logout, isAuthenticated }) => {
+const Navbar = ({ logout, isAuthenticated, role }) => {
 
   const [loading, setLoading] = useState(false)
   const [sidebar, setSidebar] = useState(true);
@@ -40,86 +43,91 @@ const Navbar = ({ logout, isAuthenticated }) => {
     {
       path: "/home",
       name: "Home",
-      icon: <AiIcons.AiFillHome />,
+      icon: <FaIcons.FaChartPie />,
       cName: 'nav-text'
     },
     {
       path: "/farmer",
-      name: "Farmer Details",
+      name: "Block Owner",
       cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <IoIcons5.IoPersonCircleSharp />,
     },
     {
       path: "/inventory",
       name: "Inventory",
       cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <RiIcons.RiFileList3Fill />,
     },
     {
       path: "/plantprogress",
       name: "Plant Progress",
       cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <RiIcons.RiPlantFill />,
     },
     {
       path: "/repository",
-      name: "Repostiory",
+      name: "Repository",
       cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <RiIcons.RiArticleFill />,
     },
     {
       path: "/report",
       name: "Report",
       cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <IoIcons5.IoBarChartSharp />,
     },
     {
       path: "/summary",
       name: "Summary",
       cName: 'nav-text',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <HiIcons.HiPresentationChartBar />,
     },
   ]
 
-  console.log(currentPage)
-
-  const guestLinks = () => (
-    <Fragment>
-      <li class="nav-item">
-        <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
-      </li>
-      <li class="nav-item">
-        <Link class="nav-link" to="/account">Account</Link>
-      </li>
-    </Fragment>
-  )
-
-  // const authLinks = () => (
-  //   <nav class="navbar navbar-expand-lg bg-light">
-  //     <div class="container-fluid">
-  //       <Link class="navbar-brand" to="/">TEST</Link>
-  //       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-  //         <span class="navbar-toggler-icon"></span>
-  //       </button>
-  //       <div class="collapse navbar-collapse" id="navbarText">
-  //         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  //           <li class="nav-item">
-  //             <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
-  //           </li>
-  //           <li class="nav-item">
-  //             <Link class="nav-link" to="/account">Account</Link>
-  //           </li>
-  //           <li class="nav-item">
-  //             <Link class="nav-link" aria-current="page" to="/" onClick={e => handleLogout(e)}>Logout</Link>
-  //           </li>
-  //         </ul>
-  //         <span class="navbar-text">
-  //           Navbar text with an inline element
-  //         </span>
-  //       </div>
-  //     </div>
-  //   </nav>
-  // )
+  const menuItemManager = [
+    {
+      path: "/home",
+      name: "Home",
+      icon: <FaIcons.FaChartPie />,
+      cName: 'nav-text'
+    },
+    {
+      path: "/farmer",
+      name: "Block Owner",
+      cName: 'nav-text',
+      icon: <IoIcons5.IoPersonCircleSharp />,
+    },
+    {
+      path: "/inventory",
+      name: "Inventory",
+      cName: 'nav-text',
+      icon: <RiIcons.RiFileList3Fill />,
+    },
+    {
+      path: "/plantprogress",
+      name: "Plant Progress",
+      cName: 'nav-text',
+      icon: <RiIcons.RiPlantFill />,
+    },
+    {
+      path: "/repository",
+      name: "Repository",
+      cName: 'nav-text',
+      icon: <RiIcons.RiArticleFill />,
+    },
+    {
+      path: "/report",
+      name: "Report",
+      cName: 'nav-text',
+      icon: <IoIcons5.IoBarChartSharp />,
+    },
+    {
+      path: "/summary",
+      name: "Summary",
+      cName: 'nav-text',
+      icon: <HiIcons.HiPresentationChartBar />,
+    },
+  ]
 
   const authLinks = () => (
     <>
@@ -191,6 +199,76 @@ const Navbar = ({ logout, isAuthenticated }) => {
     </>
   )
 
+  const authLinksManager = () => (
+    <>
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <div className='navbar d-flex border-bottom border-4'>
+          <span to='#' className='menu-bars-mobile'>
+            <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
+          </span>
+          <div className='mx-5-lg d-flex justify-content-around w-75'>
+            <h3 className=''>{currentPage === undefined ? "Home" : currentPage}</h3>
+            <div className='d-flex justify-content-around account-drop p-1'>
+              <div className='d-flex flex-column' onClick={showDropAcc}>
+                <div className='d-flex'>
+                  <div className='d-flex align-items-center'>
+                    <AiIcons.AiFillBell className='text-primary w-100' />
+                  </div>
+                  <div className='d-flex flex-column'>
+                    <span className='fw-bold'>User Name</span>
+                    <span>test@gmail.com</span>
+                  </div>
+                </div>
+                <div className={dropAcc === true ? "shadow-lg bg-white rounded dropdown-account-active d-flex justify-content-center px-3 py-1" : "dropdown-account"}>
+                  <ul className='dropdown-account-drop-ul'>
+                    <li className='dropdown-account-drop'>
+                      <Link to='/account'>
+                        My Profile
+                      </Link>
+                    </li>
+                    <li className='dropdown-account-drop'>
+                      <Link to='/' onClick={e => handleLogout(e)}>
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+          <ul className='nav-menu-items'>
+            <li className='navbar-toggle' onClick={showSidebar}>
+              <span to='#' className='menu-bars text-center'>
+                <FaIcons.FaBars />
+              </span>
+            </li>
+            <li className="w-100 d-flex justify-content-center my-2">
+              <img src="/static/images/unicore_logo.png" alt="" width="40" className={sidebar ? null : "logo-img"} />
+            </li>
+            {menuItemManager.map((item, index) => {
+              return (
+                <li key={index} className={sidebar ? `${item.cName} text-light d-flex justify-content-center` : `${item.cName} text-light close-sidebar-icon`}>
+                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu ? "active-menu" : null}>
+                    {item.icon}
+                    <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
+                  </NavLink>
+                </li>
+              );
+            })}
+            {/* <li className='nav-text text-light'>
+              <Link to='/' onClick={e => handleLogout(e)}>
+                <AiIcons.AiOutlineClose />
+                <span className={sidebar ? 'menu-item-text' : 'text-none'}>Logout</span>
+              </Link>
+            </li> */}
+          </ul>
+        </nav>
+      </IconContext.Provider>
+    </>
+  )
+
   return (
     <>
       {
@@ -204,13 +282,14 @@ const Navbar = ({ logout, isAuthenticated }) => {
           </div>
         ) : null
       }
-      {isAuthenticated ? authLinks() : null}
+      {isAuthenticated && role === "Clerk" ? authLinks() : isAuthenticated && role == "Manager" ? authLinksManager() :  null}
     </>
   )
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  role: state.profile.role
 })
 
 export default connect(mapStateToProps, { logout })(Navbar)

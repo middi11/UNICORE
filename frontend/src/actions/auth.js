@@ -8,6 +8,8 @@ import {
     LOGOUT
 } from './types'
 import axios from 'axios'
+import { toast } from 'react-toastify'
+import { load_user } from './profile';
 
 export const checkAuthenticated = () => async dispatch => {
     if (localStorage.getItem('access')) {
@@ -23,11 +25,11 @@ export const checkAuthenticated = () => async dispatch => {
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/verify/`, body, config)
 
-            if (res.data.code !== 'token_not_valid'){
+            if (res.data.code !== 'token_not_valid') {
                 dispatch({
                     type: AUTHENTICATICATED_SUCCESS
                 })
-            }else {
+            } else {
                 dispatch({
                     type: AUTHENTICATICATED_FAIL
                 })
@@ -46,36 +48,6 @@ export const checkAuthenticated = () => async dispatch => {
     }
 }
 
-export const load_user = () => async dispatch => {
-    if (localStorage.getItem('access')) {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `JWT ${localStorage.getItem('access')}`,
-                'Accept': 'application/json',
-            }
-        }
-
-        try {
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/users/me/`, config)
-
-            dispatch({
-                type: LOAD_USER_SUCCESS,
-                payload: res.data
-            })
-        } catch (error) {
-            dispatch({
-                type: LOAD_USER_FAIL
-            })
-        }
-    } else {
-        dispatch({
-            type: LOAD_USER_FAIL
-        })
-    }
-
-}
-
 export const login = (email, password) => async dispatch => {
     const config = {
         headers: {
@@ -88,11 +60,12 @@ export const login = (email, password) => async dispatch => {
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config)
 
+        console.log(res)
+
         dispatch({
             type: LOGIN_SUCCESS,
             payload: res.data
         })
-
         dispatch(load_user())
 
     } catch (error) {
