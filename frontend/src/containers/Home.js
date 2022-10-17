@@ -14,7 +14,20 @@ const Home = () => {
         label: "First dataset",
         data: [33, 53, 85, 41, 44, 65],
         fill: true,
-        backgroundColor: "rgba(75,192,192,0.2)",
+        backgroundColor: 'rgba(0, 255, 0, 0.5)',
+        borderColor: "rgba(75,192,192,1)"
+      },
+    ]
+  };
+
+  const dataPie = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "First dataset",
+        data: [33, 53, 85, 41, 44, 65],
+        fill: true,
+        backgroundColor: ["#e60049", "#0bb4ff", "#50e991", "#e6d800", "#9b19f5", "#ffa300"],
         borderColor: "rgba(75,192,192,1)"
       },
     ]
@@ -85,7 +98,7 @@ const Home = () => {
         <div className='border rounded col-lg-5 shadow-sm p-3'>
           <p className='fw-bold'>Test</p>
           <div className='p-3 d-flex justify-content-center'>
-            <Pie data={data} className="w-50 h-50" />
+            <Pie data={dataPie} className="w-50 h-50" />
           </div>
         </div>
       </div>

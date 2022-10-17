@@ -1,19 +1,40 @@
-#main-login-cont{
+#main-login-cont {
     place-items: center center;
 }
 
-#sec-login-cont{
+#sec-login-cont {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.main-container{
+.main-container {
     margin-left: 100px;
     padding: 50px;
 }
 
 @media only screen and (max-width: 800px) {
-    .main-container{
+    .main-container {
         margin-left: 0px;
         padding: 10px;
     }
-  }
+}
+
+/* .map{
+    z-index: -1!important;
+} */
+
+/* .highlight {
+    color: white;
+    background-color: red !important;
+} */
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 7.5px;
+    background-color: red;
+    margin: 18px -5px 0px 5px;
+}

@@ -51,7 +51,7 @@ const FarmerDetailsSec = () => {
         datasets: [
             {
                 data: [300, 50, 100, 50],
-                backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                backgroundColor: ["#e60049", "#0bb4ff", "#50e991", "#e6d800"],
                 hoverBackgroundColor: 'rgba(0, 255, 0, 0.2)'
             }
         ]
@@ -64,7 +64,7 @@ const FarmerDetailsSec = () => {
         datasets: [
             {
                 data: [300, 50, 100, 50],
-                backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                backgroundColor: ["#e60049", "#0bb4ff", "#50e991", "#e6d800"],
                 hoverBackgroundColor: 'rgba(0, 255, 0, 0.2)'
             }
         ]

@@ -25,6 +25,8 @@ import Navbar from './components/Navbar';
 import PrivateRouteAdmin from './hocs/PrivateRouteAdmin'
 import PrivateRouteManager from './hocs/PrivateRouteManager'
 import './app.css'
+import 'leaflet/dist/leaflet.css';
+
 
 const App = () => (
     <Provider store={store}>

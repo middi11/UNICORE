@@ -47,7 +47,7 @@ const Repository = () => {
                         <td><a className='btn btn-primary' href="">Download here</a></td>
                         <td><a className='btn btn-primary' href="">Download here</a></td>
                         <td><a className='btn btn-primary' href="">Download here</a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos error minus neque corrupti suscipit dolorum dicta? Provident debitis expedita eos quisquam animi doloremque obcaecati quia magni! Cupiditate fuga animi nihil?</td>
+                        <td>No Remarks</td>
                     </tr>
                     <tr>
                         <th scope="row">Sungai Pele</th>
@@ -56,7 +56,7 @@ const Repository = () => {
                         <td><a className='btn btn-primary' href="">Download here</a></td>
                         <td><a className='btn btn-primary' href="">Download here</a></td>
                         <td><a className='btn btn-primary' href="">Download here</a></td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, doloribus architecto id enim quo neque sequi maiores a illum odio cumque aperiam alias vel porro quibusdam harum dolor ipsa fuga.</td>
+                        <td>No Remarks</td>
                     </tr>
                 </tbody>
             </table>

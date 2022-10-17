@@ -6,26 +6,26 @@ const PlantProgressDetails = () => {
         <div className='container mt-4'>
             <div className='shadow p-3 mb-5 bg-white rounded'>
                 <h4>Checklist</h4>
-                <div className='row justify-content-around'>
-                    <div className='col-lg-2 bg-primary'>
-                        <p>Land Management</p>
-                        <h4>100%</h4>
+                <div className='row justify-content-around text-light'>
+                    <div className='col-lg-2 bg-primary border rounded'>
+                        <p className='text-light'>Land Management</p>
+                        <h4 className='text-light'>100%</h4>
                     </div>
-                    <div className='col-lg-2 bg-secondary'>
-                        <p>Planting</p>
-                        <h4>100%</h4>
+                    <div className='col-lg-2 bg-secondary border rounded'>
+                        <p className='text-light'>Planting</p>
+                        <h4 className='text-light'>100%</h4>
                     </div>
-                    <div className='col-lg-2 bg-success'>
-                        <p>Water Management</p>
-                        <h4>80%</h4>
+                    <div className='col-lg-2 bg-success border rounded'>
+                        <p className='text-light'>Water Management</p>
+                        <h4 className='text-light'>80%</h4>
                     </div>
-                    <div className='col-lg-2 bg-info'>
-                        <p>Fertilizing</p>
-                        <h4>70%</h4>
+                    <div className='col-lg-2 bg-info border rounded'>
+                        <p className='text-light'>Fertilizing</p>
+                        <h4 className='text-light'>70%</h4>
                     </div>
-                    <div className='col-lg-2 bg-dark'>
+                    <div className='col-lg-2 bg-dark border rounded'>
                         <p className='text-light'>Pest Control</p>
-                        <h4>65%</h4>
+                        <h4 className='text-light'>65%</h4>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { Fragment, useState, useEffect } from 'react'
+import { Link, NavLink, useHistory} from 'react-router-dom'
 import { logout } from '../actions/auth'
 import { connect } from 'react-redux'
 import './components.css'
@@ -19,12 +19,18 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
   const [activeMenu, setActiveMenu] = useState(false)
   const [currentPage, setCurrentPage] = useState(currentPage)
   const [dropAcc, setDropAcc] = useState(false)
+  const [hrefLoc, setHrefLoc] = useState(window.location.href)
 
   const showSidebar = () => setSidebar(!sidebar);
   const activeNav = () => setActiveMenu(!activeMenu)
   const showDropAcc = () => setDropAcc(!dropAcc)
 
+  console.log(hrefLoc)
 
+  useEffect(() => {
+    setHrefLoc(window.location.href)
+  }, [hrefLoc])
+  
   const handleLogout = (e) => {
     setLoading(true)
     logout()
@@ -72,7 +78,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
     },
     {
       path: "/summary",
-      name: "Summary",
+      name: "Analysis",
       cName: 'nav-text',
       icon: <HiIcons.HiPresentationChartBar />,
     },
@@ -117,7 +123,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
     },
     {
       path: "/summary",
-      name: "Summary",
+      name: "Analysis",
       cName: 'nav-text',
       icon: <HiIcons.HiPresentationChartBar />,
     },
@@ -132,6 +138,9 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
           </span>
           <div className='mx-5-lg d-flex justify-content-around w-75'>
             <h3 className=''>{currentPage === undefined ? "Home" : currentPage}</h3>
+            {
+
+            }
             <div className='d-flex justify-content-around account-drop p-1'>
               <div className='d-flex flex-column' onClick={showDropAcc}>
                 <div className='d-flex'>
