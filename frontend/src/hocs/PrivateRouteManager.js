@@ -1,9 +1,9 @@
 import React from 'react'
-import {Route, Navigate} from 'react-router-dom'
+import {Route, Navigate, Outlet} from 'react-router-dom'
 import {connect} from 'react-redux'
 
-function PrivateRouteManager({isAunthenticated, isRole, children}) {
-  return isAunthenticated && (isRole === "Manager") ? children: <Navigate to="/"/>
+function PrivateRouteManager({isAunthenticated, isRole}) {
+  return isAunthenticated && (isRole === "Manager") ? <Outlet/>: <Navigate to="/"/>
 }
 
 const mapStateToProps = state => ({

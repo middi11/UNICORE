@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const PlantProgress = () => {
     return (
@@ -25,7 +26,9 @@ const PlantProgress = () => {
                     </div>
                     <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                     <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
@@ -34,7 +37,9 @@ const PlantProgress = () => {
                     </div>
                     <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                     <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
@@ -43,36 +48,9 @@ const PlantProgress = () => {
                     </div>
                     <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                     <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div className='row my-3 justify-content-around'>
-                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <div className='d-flex align-items-center'>
-                        <p className='fw-bold'>Ladang Sekinchan</p>
-                    </div>
-                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
-                    <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
-                    </div>
-                </div>
-                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <div className='d-flex align-items-center'>
-                        <p className='fw-bold'>Ladang Sekinchan</p>
-                    </div>
-                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
-                    <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
-                    </div>
-                </div>
-                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
-                    <div className='d-flex align-items-center'>
-                        <p className='fw-bold'>Ladang Sekinchan</p>
-                    </div>
-                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
-                    <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -83,7 +61,9 @@ const PlantProgress = () => {
                     </div>
                     <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                     <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
@@ -92,7 +72,9 @@ const PlantProgress = () => {
                     </div>
                     <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                     <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
                 <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
@@ -101,7 +83,44 @@ const PlantProgress = () => {
                     </div>
                     <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
                     <div className='d-flex justify-content-around my-3'>
-                        <a href="/plantprogressdetails" className='btn btn-primary'>View Details</a>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <div className='row my-3 justify-content-around'>
+                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
+                    <div className='d-flex align-items-center'>
+                        <p className='fw-bold'>Ladang Sekinchan</p>
+                    </div>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
+                    <div className='d-flex justify-content-around my-3'>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
+                    </div>
+                </div>
+                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
+                    <div className='d-flex align-items-center'>
+                        <p className='fw-bold'>Ladang Sekinchan</p>
+                    </div>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
+                    <div className='d-flex justify-content-around my-3'>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
+                    </div>
+                </div>
+                <div className='col-lg-3 shadow p-3 mb-5 bg-white rounded'>
+                    <div className='d-flex align-items-center'>
+                        <p className='fw-bold'>Ladang Sekinchan</p>
+                    </div>
+                    <img src="static/images/paddyfield.jpg" className="w-100" alt="" />
+                    <div className='d-flex justify-content-around my-3'>
+                        <Link to='/plantprogressdetails' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
             </div>

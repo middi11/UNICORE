@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Link, NavLink, useHistory} from 'react-router-dom'
+import { Link, NavLink, useLocation} from 'react-router-dom'
 import { logout } from '../actions/auth'
 import { connect } from 'react-redux'
 import './components.css'
@@ -9,27 +9,19 @@ import * as IoIcons from 'react-icons/io';
 import * as IoIcons5 from "react-icons/io5";
 import * as RiIcons from "react-icons/ri";
 import * as HiIcons from "react-icons/hi";
-import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import { IconContext } from 'react-icons';
 
 const Navbar = ({ logout, isAuthenticated, role }) => {
 
   const [loading, setLoading] = useState(false)
   const [sidebar, setSidebar] = useState(true);
-  const [activeMenu, setActiveMenu] = useState(false)
   const [currentPage, setCurrentPage] = useState(currentPage)
   const [dropAcc, setDropAcc] = useState(false)
-  const [hrefLoc, setHrefLoc] = useState(window.location.href)
 
   const showSidebar = () => setSidebar(!sidebar);
-  const activeNav = () => setActiveMenu(!activeMenu)
   const showDropAcc = () => setDropAcc(!dropAcc)
 
-  console.log(hrefLoc)
-
-  useEffect(() => {
-    setHrefLoc(window.location.href)
-  }, [hrefLoc])
+  const location = useLocation()
   
   const handleLogout = (e) => {
     setLoading(true)
@@ -38,11 +30,6 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
     setTimeout(() => {
       setLoading(false)
     }, 4000);
-  }
-
-  const onClickMenu = (item) => {
-    // activeNav()
-    setCurrentPage(item)
   }
 
   const menuItem = [
@@ -59,6 +46,11 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
       icon: <IoIcons5.IoPersonCircleSharp />,
     },
     {
+      path: "/farmersec",
+      name: "Block Owner Details",
+      cName: 'nav-text',
+    },
+    {
       path: "/inventory",
       name: "Inventory",
       cName: 'nav-text',
@@ -69,6 +61,11 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
       name: "Plant Progress",
       cName: 'nav-text',
       icon: <RiIcons.RiPlantFill />,
+    },
+    {
+      path: "/plantprogressdetails",
+      name: "Plant Progress Details",
+      cName: 'nav-text',
     },
     {
       path: "/repository",
@@ -98,6 +95,11 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
       icon: <IoIcons5.IoPersonCircleSharp />,
     },
     {
+      path: "/farmersec",
+      name: "Block Owner Details",
+      cName: 'nav-text',
+    },
+    {
       path: "/inventory",
       name: "Inventory",
       cName: 'nav-text',
@@ -108,6 +110,11 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
       name: "Plant Progress",
       cName: 'nav-text',
       icon: <RiIcons.RiPlantFill />,
+    },
+    {
+      path: "/plantprogressdetails",
+      name: "Plant Progress Details",
+      cName: 'nav-text',
     },
     {
       path: "/repository",
@@ -137,10 +144,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
             <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
           </span>
           <div className='mx-5-lg d-flex justify-content-around w-75'>
-            <h3 className=''>{currentPage === undefined ? "Home" : currentPage}</h3>
-            {
-
-            }
+            <h3 className=''>{menuItem.filter(x => x.path == location.pathname).map(x => x.name)}</h3>
             <div className='d-flex justify-content-around account-drop p-1'>
               <div className='d-flex flex-column' onClick={showDropAcc}>
                 <div className='d-flex'>
@@ -170,7 +174,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
             </div>
           </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <nav className={sidebar ? 'nav-menu active-side' : 'nav-menu'}>
           <ul className='nav-menu-items'>
             <li className='navbar-toggle' onClick={showSidebar}>
               <span to='#' className='menu-bars text-center'>
@@ -180,10 +184,10 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
             <li className="w-100 d-flex justify-content-center my-2">
               <img src="/static/images/unicore_logo.png" alt="" width="40" className={sidebar ? null : "logo-img"} />
             </li>
-            {menuItem.map((item, index) => {
+            {menuItem.filter(x => x.path !== "/farmersec" && x.path !== "/plantprogressdetails" ).map((item, index) => {
               return (
                 <li key={index} className={sidebar ? `${item.cName} text-light d-flex justify-content-center` : `${item.cName} text-light close-sidebar-icon`}>
-                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu ? "active-menu" : null}>
+                  <NavLink to={item.path}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
                   </NavLink>
@@ -216,7 +220,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
             <FaIcons.FaBars onClick={showSidebar} className="text-dark" />
           </span>
           <div className='mx-5-lg d-flex justify-content-around w-75'>
-            <h3 className=''>{currentPage === undefined ? "Home" : currentPage}</h3>
+            <h3 className=''>{menuItemManager.filter(x => x.path == location.pathname).map(x => x.name)}</h3>
             <div className='d-flex justify-content-around account-drop p-1'>
               <div className='d-flex flex-column' onClick={showDropAcc}>
                 <div className='d-flex'>
@@ -246,7 +250,7 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
             </div>
           </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <nav className={sidebar ? 'nav-menu active-side' : 'nav-menu'}>
           <ul className='nav-menu-items'>
             <li className='navbar-toggle' onClick={showSidebar}>
               <span to='#' className='menu-bars text-center'>
@@ -256,10 +260,10 @@ const Navbar = ({ logout, isAuthenticated, role }) => {
             <li className="w-100 d-flex justify-content-center my-2">
               <img src="/static/images/unicore_logo.png" alt="" width="40" className={sidebar ? null : "logo-img"} />
             </li>
-            {menuItemManager.map((item, index) => {
+            {menuItemManager.filter(x => x.path !== "/farmersec" && x.path !== "/plantprogressdetails" ).map((item, index) => {
               return (
                 <li key={index} className={sidebar ? `${item.cName} text-light d-flex justify-content-center` : `${item.cName} text-light close-sidebar-icon`}>
-                  <NavLink to={item.path} onClick={() => onClickMenu(item.name)} className={activeMenu ? "active-menu" : null}>
+                  <NavLink to={item.path}>
                     {item.icon}
                     <span className={sidebar ? 'menu-item-text' : 'text-none'}>{item.name}</span>
                   </NavLink>

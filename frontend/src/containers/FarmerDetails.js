@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const FarmerDetails = () => {
     return (
-        
+
         <div className='container mt-4'>
             <div className='my-3'>
                 <form>
@@ -32,7 +33,9 @@ const FarmerDetails = () => {
                         <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
+                        <Link to='/farmersec' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
 
@@ -47,7 +50,9 @@ const FarmerDetails = () => {
                         <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
+                        <Link to='/farmersec' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
 
@@ -62,7 +67,9 @@ const FarmerDetails = () => {
                         <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
+                        <Link to='/farmersec' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
 
@@ -77,7 +84,9 @@ const FarmerDetails = () => {
                         <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
+                        <Link to='/farmersec' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
 
@@ -92,7 +101,9 @@ const FarmerDetails = () => {
                         <span>Lot: G, H, I</span>
                     </div>
                     <div className='px-2 d-flex align-items-center'>
-                        <a href="/farmersec" className='btn btn-primary'>View Detail</a>
+                        <Link to='/farmersec' className='btn btn-primary'>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
             </div>

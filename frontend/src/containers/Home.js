@@ -1,4 +1,6 @@
-import React from 'react'
+import Test from './Test';
+import Test1 from './Test1';
+import React, {useState} from 'react'
 import { GoogleMap, useLoadScript, Marker } from "@googlemaps/react-wrapper"
 import { Line, Pie } from "react-chartjs-2";
 import { Chart, registerables } from 'chart.js';
@@ -6,6 +8,8 @@ import { BsSearch } from "react-icons/bs";
 Chart.register(...registerables);
 
 const Home = () => {
+
+  const [name, setName] = useState("")
 
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
