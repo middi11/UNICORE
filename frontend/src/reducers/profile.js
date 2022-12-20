@@ -6,7 +6,6 @@ import {
 const initialState = {
     name: "",
     role: ""
-
 }
 
 export default function (state = initialState, action) {
